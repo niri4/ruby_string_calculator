@@ -21,5 +21,10 @@ RSpec.describe StringCalculator do
       expect(StringCalculator.add("1,2,3,4")).to eq(10)
       expect(StringCalculator.add("5,10,15,20")).to eq(50)
     end
+  
+    it "handles new lines as delimiters" do
+      expect(StringCalculator.add("1\n2,3")).to eq(6)
+      expect(StringCalculator.add("10\n20\n30")).to eq(60)
+    end
   end
 end
